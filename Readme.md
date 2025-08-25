@@ -53,7 +53,7 @@ A **Django REST Framework** based backend for a Student Portal system that manag
   - Subjects
 - **JWT-based Authentication** using `rest_framework_simplejwt`
 - Separate models for **Staff** and **Students** linked to `CustomUser`
-- Each student is associated with a \*\*Course`
+- Each student is associated with a `Course`
 - Admin interface support for managing models
 
 ---
@@ -63,7 +63,7 @@ A **Django REST Framework** based backend for a Student Portal system that manag
 1. Clone the repository:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/rauhan-sheikh/student_portal.git
 cd student_portal
 ```
 
