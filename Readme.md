@@ -2,59 +2,27 @@
 
 A **Django REST Framework** based backend for a Student Portal system that manages users, staff, students, courses, and subjects. This project provides APIs to perform CRUD operations on all entities, supports authentication with JWT tokens, and uses a custom user model.
 
+This project is being improved **incrementally** toward production-ready quality
+
 ---
 
 ## Table of Contents
 
-- [Project Structure](#project-structure)
 - [Features](#features)
 - [Setup Instructions](#setup-instructions)
-- [API Endpoints](#api-endpoints)
-- [Authentication](#authentication)
+- [API Endpoints & Documentation](#api-endpoints--documentation)
+- [Incremental Progress](#incremental-progress)
 - [Future Scope / Potential Additions](#future-scope--potential-additions)
-
----
-
-## Project Structure
-
-```
-.
-├── app                  # Main application
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── models.py        # Custom user, student, staff, course, subject models
-│   ├── serializers.py   # DRF serializers for models
-│   ├── urls.py          # Application-level URL routing
-│   ├── views.py         # API viewsets
-│   └── migrations/
-├── student_portal       # Django project folder
-│   ├── settings.py
-│   ├── urls.py
-│   ├── wsgi.py
-│   └── asgi.py
-├── db.sqlite3           # SQLite database
-├── manage.py
-└── populate_demo.py     # Script to populate demo data (optional)
-```
 
 ---
 
 ## Features
 
-- **Custom User Model** (`CustomUser`) with roles:
-  - HOD
-  - Staff
-  - Student
-- **CRUD APIs** for:
-  - Users
-  - Staff
-  - Students
-  - Courses
-  - Subjects
-- **JWT-based Authentication** using `rest_framework_simplejwt`
-- Separate models for **Staff** and **Students** linked to `CustomUser`
-- Each student is associated with a `Course`
-- Admin interface support for managing models
+- Custom user model with roles (HOD, Staff, Student)
+- JWT authentication with refresh tokens
+- CRUD APIs for users, staff, students, courses, and subjects
+- Admin interface for model management
+- Interactive API documentation (Swagger UI & ReDoc)
 
 ---
 
@@ -102,73 +70,58 @@ python manage.py runserver
 
 ---
 
-## API Endpoints
+## API Endpoints & Documentation
 
-- **Authentication**
+Here are the main categories of APIs (full details are available in the generated docs).
 
-  - `POST /api/auth/token/` – Obtain JWT token
-  - `POST /api/auth/token/refresh/` – Refresh JWT token
+### Authentication
 
-- **Users**
+- `POST /api/auth/token/` – Obtain JWT token
+- `POST /api/auth/token/refresh/` – Refresh JWT token
 
-  - `GET /api/users/` – List all users
-  - `POST /api/users/` – Create user
-  - `GET /api/users/{id}/` – Retrieve user
-  - `PUT /PATCH /api/users/{id}/` – Update user
-  - `DELETE /api/users/{id}/` – Delete user
+### Users
 
-- **Staff**
+- `GET /api/users/` – List all users
+- `POST /api/users/` – Create a new user
 
-  - `GET /api/staff/` – List staff
-  - `POST /api/staff/` – Create staff
-  - `GET /api/staff/{id}/` – Retrieve staff
-  - `PUT /PATCH /api/staff/{id}/` – Update staff
-  - `DELETE /api/staff/{id}/` – Delete staff
+### Staff
 
-- **Students**
+- `GET /api/staff/` – List staff
+- `POST /api/staff/` – Create staff
 
-  - `GET /api/students/` – List students
-  - `POST /api/students/` – Create student
-  - `GET /api/students/{id}/` – Retrieve student
-  - `PUT /PATCH /api/students/{id}/` – Update student
-  - `DELETE /api/students/{id}/` – Delete student
+### Students
 
-- **Courses**
+- `GET /api/students/` – List students
+- `POST /api/students/` – Create student
 
-  - `GET /api/courses/` – List courses
-  - `POST /api/courses/` – Create course
-  - `GET /api/courses/{id}/` – Retrieve course
-  - `PUT /PATCH /api/courses/{id}/` – Update course
-  - `DELETE /api/courses/{id}/` – Delete course
+### Courses
 
-- **Subjects**
-  - `GET /api/subjects/` – List subjects
-  - `POST /api/subjects/` – Create subject
-  - `GET /api/subjects/{id}/` – Retrieve subject
-  - `PUT /PATCH /api/subjects/{id}/` – Update subject
-  - `DELETE /api/subjects/{id}/` – Delete subject
+- `GET /api/courses/` – List courses
+- `POST /api/courses/` – Create course
 
-All endpoints follow standard **CRUD operations** via **Django REST Framework ViewSets**.
+### Subjects
+
+- `GET /api/subjects/` – List subjects
+- `POST /api/subjects/` – Create subject
+
+### API Schema & Documentation
+
+- `GET /api/schema/` – OpenAPI schema (JSON/YAML)
+- `GET /api/docs/swagger/` – Swagger UI (interactive docs)
+- `GET /api/docs/redoc/` – ReDoc (alternative API docs)  
+  Use these docs to explore all available endpoints interactively.
 
 ---
 
-## Authentication
+## Incremental Progress
 
-This project uses **JWT (JSON Web Tokens)** for authentication. Tokens can be obtained using:
+This project is under active development, with improvements added step by step:
 
-```json
-POST /api/auth/token/
-{
-  "username": "admin",
-  "password": "password"
-}
-```
+✅ Iteration 1: CRUD APIs with JWT auth
 
-Use the returned `access` token in the `Authorization` header for API requests:
+✅ Iteration 2: Interactive API documentation (Swagger & ReDoc)
 
-```
-Authorization: Bearer <access_token>
-```
+🔄 Next: User registration flow, role-based permissions, and testing
 
 ---
 
