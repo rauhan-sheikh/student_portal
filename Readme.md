@@ -20,6 +20,7 @@ This project is being improved **incrementally** toward production-ready quality
 
 - Custom user model with roles (HOD, Staff, Student)
 - JWT authentication with refresh tokens
+- Role-based permissions for endpoints
 - CRUD APIs for users, staff, students, courses, and subjects
 - Admin interface for model management
 - Interactive API documentation (Swagger UI & ReDoc)
@@ -121,51 +122,30 @@ This project is under active development, with improvements added step by step:
 
 ✅ Iteration 2: Interactive API documentation (Swagger & ReDoc)
 
-🔄 Next: User registration flow, role-based permissions, and testing
+✅ Iteration 3: Role-based permissions for HOD, Staff, and Students
+
+🔄 Next: User registration flow, profile management, and automated tests
 
 ---
 
 ## Future Scope / Potential Additions
 
-1. **Role-Based Permissions**
-   - Limit access for students, staff, and HODs to specific endpoints.
-2. **Attendance Management**
+- Attendance Management – Daily attendance logs for students
 
-   - Track student attendance with daily logs.
+- Exams & Results – Models & APIs for grades and results
 
-3. **Exams & Results**
+- Notifications – Email or in-app notifications
 
-   - Add models for exams, grades, and results.
-   - APIs for teachers to upload results and students to view them.
+- Frontend Integration – React.js
 
-4. **Notifications**
+- Profile Pictures – Upload and display for users
 
-   - Email or in-app notifications for events like result declaration or announcements.
+- Audit Logs – Track changes by users
 
-5. **Frontend Integration**
+- Deployment – Docker, NGINX, PostgreSQL
 
-   - React.js or Angular frontend for a complete student portal.
-
-6. **Profile Pictures**
-
-   - Allow uploading profile pictures for students and staff.
-
-7. **Search & Filters**
-
-   - Search students by course, name, or email.
-   - Filter subjects by course.
-
-8. **Audit Logs**
-
-   - Keep track of changes made by users (admin/staff).
-
-9. **Deployment**
-
-   - Prepare for deployment using **Docker**, **NGINX**, and **PostgreSQL**.
-
-10. **Analytics**
-    - Track student performance trends, attendance stats, etc.
+- Analytics – Student performance and attendance trends
 
 ---
 
-This backend provides a **strong foundation** for a fully functional student portal and can be extended with more **academic features**, **role-based access**, and **analytics dashboards** in the future.
+This backend provides a **strong foundation** for a fully functional student portal and can be extended with more **academic features**, and **analytics dashboards** in the future.
