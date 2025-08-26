@@ -78,7 +78,7 @@ venv\Scripts\activate         # Windows
 3. Install dependencies:
 
 ```bash
-pip install django djangorestframework djangorestframework-simplejwt
+pip install -r requirements.txt
 ```
 
 4. Apply migrations:
