@@ -8,7 +8,17 @@ User = get_user_model()
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ["id", "email", "user_type", "is_active"]
+        fields = ["id", "username", "email", "password", "user_type", "is_active"]
+        extra_kwargs = {
+            "password": {"write_only": True},  # don’t expose password in GET
+        }
+    def create(self, validated_data):
+        password = validated_data.pop("password", None)  # remove password safely
+        user = User(**validated_data)                    # no raw password here
+        if password:
+            user.set_password(password)                  # hash if provided
+        user.save()
+        return user
 
 
 class CourseSerializer(serializers.ModelSerializer):
