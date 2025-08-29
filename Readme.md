@@ -22,6 +22,8 @@ This project is being improved **incrementally** toward production-ready quality
 - JWT authentication with refresh tokens
 - Role-based permissions for endpoints
 - CRUD APIs for users, staff, students, courses, and subjects
+- Profile API: users can view their own profile (restricted by role)
+- Change Password API: secure password update with old password validation
 - Admin interface for model management
 - Interactive API documentation (Swagger UI & ReDoc)
 
@@ -84,6 +86,8 @@ Here are the main categories of APIs (full details are available in the generate
 
 - `GET /api/users/` – List all users
 - `POST /api/users/` – Create a new user
+- `GET /api/users/me/` – View authenticated user’s profile
+- `POST /api/users/change_password/` – Change own password
 
 ### Staff
 
@@ -124,7 +128,9 @@ This project is under active development, with improvements added step by step:
 
 ✅ Iteration 3: Role-based permissions for HOD, Staff, and Students
 
-🔄 Next: User registration flow, profile management, and automated tests
+✅ Iteration 4: Profile & Change Password APIs
+
+🔄 Next: Automated tests, error handling & logging
 
 ---
 
